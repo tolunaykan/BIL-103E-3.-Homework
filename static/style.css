@@ -1,0 +1,261 @@
+table, tr,th,td{
+    border-collapse:collapse;
+}
+th{
+	background-color: #193441;
+}
+
+tr:hover{
+	background-color: #3E606F;
+}
+
+table{
+	width:100%;
+}
+
+@media (min-width: 1200px) {
+  table{
+    /* 1200px li geçtiğinde devreye giriyor*/
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  table{
+    font-size: 70%;
+  }
+}
+
+.headImage{
+	width:100%;
+	display:table;	
+}
+
+.headImage img{
+	width:100%;
+}
+
+.contents{
+	margin:1% 0 1% 1%;
+	float:left;
+	width:82%
+}
+
+.transactions2{
+    background-color:#91AAB4;
+}
+
+.transactions{
+    background-color:#CBDBD7;
+}
+       
+body{
+	background-color:#FCFFF5;
+}
+
+.main{
+	width: 100%;
+	height:120vh;
+	background-color: #3E606F;
+	display:table;
+}
+
+.formsAll{
+	float:right;
+	display:table;
+	width: 15%;
+	margin: 1% 1% 0 0;
+}
+
+.formDivLeft{
+	width: 100%;
+    display: table;
+}
+
+
+.formDivCenter{
+	width: 100%;
+	display: table;
+	margin-top:5%;
+}
+
+.solFormlar{
+	width: 100%;
+	margin:0 0 1% 0;
+	display:table;
+}
+
+.formDivRight{
+	width: 100%;
+}
+
+.sagFormlar{
+	width: 100%;
+	margin:1% 0 7% 0;
+	display:table;
+}
+
+.resultRightForm{
+	width: 14.7%;
+	position: fixed;
+    bottom: 0;
+    right: 1.55%;
+	background-color:#071930;
+	color:white;
+}
+
+.resultRightForm legend{
+	color:white;
+	text-align:center;
+}
+
+.legends{
+	text-align: center;
+}
+
+.searchBarDiv{
+	display: table;
+}
+
+.searchBarDiv form input[type=text]{
+	width:50%; 
+	float: right;
+	margin-right:5%;
+}
+
+.searchBarDiv form input[type=submit]{
+	width:30%; 
+	float: right;
+}
+
+.navDiv{
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+	width: 100%;
+}
+
+.navDiv ul{
+	display:flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #193441;
+	overflow: hidden;
+	font-family:sans-serif;
+}
+
+.navDiv li{
+	float: left;
+}
+
+.home:hover {
+	background-color:#91AAB4;
+}
+
+.home{
+	transition-duration:0.5s;
+	background-color: #071930;
+}
+
+.navDiv li a{
+	display: block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	padding: 1.2em;
+}
+
+.navDiv li p{
+	float:left;
+	padding:0;
+	margin:0;
+	color:white;
+}
+
+.sonli{
+   float:right;
+   position:absolute;
+   right:15px;
+   bottom:31%;
+}
+
+.sonli p{
+	font-size:90%;
+}
+
+th{
+	background-color: #193441;
+	color:#ffffffde;
+}
+
+input[type=text]{
+	border:2px solid #CBDBD7;
+	border-radius:4px;
+	width:100%;
+}
+
+input[type=text]:focus{
+	border:2px solid #193441;
+}
+
+input[type=submit]{
+	background-color:#071930;
+	border:none;
+	border-radius:4px;
+	width:50%;
+	color:white;
+	padding:0.3em;
+	font-size:75%;
+	transition-duration:0.5s;
+}
+
+input[type=submit]:hover{
+	background-color:#91AAB4;
+	color:#071930;
+}
+
+select{
+	border:2px solid #CBDBD7;
+	border-radius:4px;
+	width:100%;
+}
+
+select option{
+	background-color:#CBDBD7;
+}
+
+legend{
+	color:#071930;
+}
+
+option{
+	background-color:#CBDBD7;
+}
+
+.centerLi{
+	width:100%;
+	text-align:center;
+	position:relative;
+}
+
+.centerLi p{
+	position:absolute;
+	bottom:33%;
+	left:31%;
+}
+
+.rightLi{
+	width:35.6%;
+	position:relative;
+}
+
+.tableHead{
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 54px;
+	font-size:91%;
+	height:3.5vh;
+}
+
