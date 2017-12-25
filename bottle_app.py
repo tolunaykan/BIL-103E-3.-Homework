@@ -5,11 +5,11 @@
 ### The landing page for assignment 3 should be at /
 #####################################################################
 
-from bottle import route, run, default_app, debug, static_file, request, error
+from bottle import route, run, default_app, debug, static_file, request
 import csv
 
 contents = []
-with open("a3_input.csv") as input_file:
+with open("a3_input.csv",encoding='utf-8') as input_file:
     for row in csv.reader(input_file):
         contents = contents + [row]
 
@@ -174,9 +174,15 @@ def sortTable():
      return htmlify("Sorted by "+value,getTable(content),value," "," ")
      
 def searchTable():
-    nameValue = request.GET['cityname']
-    if nameValue=="":
-        nameValue="Istanbul"
+    nameValueFirst = request.GET.getunicode('cityname')
+    if nameValueFirst=="":
+        nameValueFirst="Istanbul"
+    if nameValueFirst[0]=="i":
+        isimList = list(nameValueFirst)
+        isimList[0]="İ"
+        nameValue="".join(isimList)
+    else:
+        nameValue = "%s%s" % (nameValueFirst[0].upper(), nameValueFirst[1:])
     functionsList = request.GET.getlist('functions')
     cityList=[]
     for row in contents:
@@ -229,13 +235,23 @@ def statisticsTable():
     return htmlify("Statistics",getTable(liste),"Cities",stringTable," ") 
 
 def getSearchBarResult():
-    nameValue = request.POST.get("search","Istanbul")
+    nameValueFirst = request.GET.getunicode("search")
+    if nameValueFirst=="":
+        nameValueFirst="Istanbul"
+    if nameValueFirst[0]=="i":
+        isimList = list(nameValueFirst)
+        isimList[0]="İ"
+        nameValue="".join(isimList)
+       
+    else:
+        nameValue = "%s%s" % (nameValueFirst[0].upper(), nameValueFirst[1:])
+    
     toplam=0
     for row in contents:
         if nameValue in row:
             for item in row[1:]:
                 toplam+= int(item)         
-    return htmlify("Search",getTable(contents),"Cities"," ","Total: "+ str(toplam))            
+    return htmlify(nameValue,getTable(contents),"Cities"," ","Total: "+ str(toplam))            
         
 def getStatisticsResultTable(totalCheckBox,averageCheckBox,toplam,average):
     stringTable="""
